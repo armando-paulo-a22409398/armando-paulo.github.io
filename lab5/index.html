@@ -8,22 +8,46 @@
 <body id="background">
   <p id="ex1">1.Passa por aqui!</p>
 
-  <button type="button" onclick="alert('Olá');">Alerta</button>
-  <p id="cores">2.Pinta-me!
-  <button data-color="red">Red</button>
+
+  <p id="cores">2.Pinta-me! </p>
+ 
+  <p> <button data-color="red">Red</button>
   <button data-color="green">Green</button>
   <button data-color="blue">Blue</button>
 </p>
  
 <p>3.Experimenta escrever...: <input type="text" id="fname" onkeyup="toUpperCaseInput()"></p>
 
-<p>4.Escolha uma cor em inglês: <input type="text" id="coresDoFundo"><button type="button" id="buttonColor" onclick="myFunction();">submeter</button></p>
+<p>4. Escolha uma cor em inglês: 
+  <select id="coresDoFundo">
+    <option value="white">White</option>
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+  </select>
+</p>
 
-
-  <h1>0</h1>
-  <p>5.<button onclick="count()">Conta</button></p>
-<p>6. <input type="text" id="nome" placeholder="Insira o seu nome"><input type="text" id="idade" placeholder="Insira a sua idade"><button type="button" id="buttonColor" onclick="myFunction();">Submit</button></p>
-
+  
+<p>5.<button onclick="countManual()">Conta!</button> <span id="manualNumber">0</span> 
+  
+</p>
+<p>6. <input type="text" id="nome" placeholder="Insira o seu nome">
+  <input type="text" id="idade" placeholder="Insira a sua idade">
+  <datalist id="idades">
+    <option value="10">
+    <option value="15">
+    <option value="20">
+    <option value="25">
+    <option value="30">
+    <option value="35">
+    <option value="40">
+    <option value="45">
+    <option value="50">
+  </datalist>
+  <button type="button" id="submitButton">Submit</button>
+</p>
+<p id="mensagem"></p>
+<p id="Automatic">7.Automatic Counter: 
+  0</p>
   <footer>
     <p>DIW 2025</p>
   </footer>
