@@ -1,0 +1,101 @@
+body {
+    background-color: rgb(157, 212, 227);
+}
+.Menu {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100vw;
+  padding: 10px;
+  background: whitesmoke;
+}
+.Hero{
+    width: 100vw;
+    height: 100vh;
+    padding: 60px;
+    display: flex;
+    background-image: url(images/HeroImage.jpg);
+    background-size: cover;
+    
+}
+.texto{
+  position: absolute;
+  font-weight: bold;
+  font-size: 30px;
+}
+nav{
+    display: flex;
+  gap: 10px;
+}
+.ancoras a{
+padding: 10px 20px;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 2px 3px 3px lightgrey;
+}
+nav a {
+  padding: 10px 20px;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 2px 3px 3px lightgrey;
+}
+a:hover {
+  filter: brightness(90%);
+}
+.fotografias{
+   display:flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 10px;
+   
+}
+
+.fotografias img{
+    width: 150px;
+    border-radius: 20px;
+    transition: width 1s;
+}
+.fotografias img:hover {
+  width: 300px;
+}
+.videos{
+  background-color: rgba(119, 170, 179, 0.549);
+  width: 100vw;
+}
+.poesia{
+  
+  background-color: rgba(78, 151, 162, 0.462);
+  width: 100vw;
+}
+.Foto{
+    background-color: rgba(123, 176, 200, 0.495);
+    width: 100vw;
+}
+@media(max-width: 768px){
+ nav{
+     flex-direction:column;
+     gap: 0.5rem;
+     
+    }   
+
+ .Menu:hover nav {
+    display: flex;
+  }
+  .conteudo{
+    flex-direction: column;
+  }
+.texto{
+  position: relative;
+  padding: 10px;
+  top: 20px;
+  left: 20px;
+}
+.mapa{
+  position: relative;
+}
+
+}

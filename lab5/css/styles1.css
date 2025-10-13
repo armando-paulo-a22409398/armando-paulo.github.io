@@ -1,0 +1,72 @@
+body {
+    background-color: rgb(157, 212, 227);
+}
+.Menu {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100vw;
+  padding: 10px;
+  background: whitesmoke;
+}
+
+nav{
+    display: flex;
+  gap: 10px;
+}
+
+nav a {
+  padding: 10px 20px;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 2px 3px 3px lightgrey;
+}
+a:hover {
+  filter: brightness(90%);
+}
+.conteudo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 21px;
+}
+
+.mapa{
+  position: relative;
+  flex: 1;
+}
+.mapa iframe{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.texto{
+  padding: 20px;
+  flex: 1;
+}
+@media(max-width: 768px){
+ nav{
+     flex-direction:column;
+     gap: 0.5rem;
+     
+    }   
+
+ .Menu:hover nav {
+    display: flex;
+  }
+  .conteudo{
+    flex-direction: column;
+  }
+.texto{
+  position: absolute;
+  padding: 10px;
+  top: 20px;
+  left: 20px;
+}
+.mapa{
+  position: relative;
+}
+
+}
