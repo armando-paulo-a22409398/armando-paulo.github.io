@@ -1,0 +1,24 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: aliceblue;
+}
+.header li{
+    border-radius: 10px;
+    background-color: whitesmoke;
+    align-items: flex-start;
+    display: flex;
+    text-decoration: none;
+    flex-direction: row;
+}
+.header li a{
+    text-decoration: none;
+    color: black;
+}
+#cesto{
+    background-color: aliceblue;
+    text-align: center;
+}
+#produtos{
+    text-align: center;
+}
