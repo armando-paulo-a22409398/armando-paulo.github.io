@@ -1,20 +1,44 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: #f5f7fa;
+}
+h1, h2 {
+    text-align: center;
+}
 .header{
     display: flex;
     justify-content: space-between;
-    background-color: aliceblue;
+     align-items: center;
+    background: #004aad;
+    padding: 15px 25px;
+    color: white;
     height: 100%;
 }
-.header li{
-    border-radius: 10px;
-    background-color: whitesmoke;
-    align-items: flex-start;
+.header ul {
+    list-style: none;
     display: flex;
-    text-decoration: none;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+.header li{
+      background: #ffffff33;
+    padding: 8px 15px;
+    border-radius: 8px;
     flex-direction: row;
 }
 .header li a{
     text-decoration: none;
-    color: black;
+    color: white;
+    font-weight: bold;
+}
+header input, header select {
+    margin: 0 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 14px;
 }
 #cesto{
     background-color: rgb(182, 198, 213);
@@ -23,9 +47,78 @@
     height: 100%;
 }
 
-#produtos{
-    text-align: center;
-     background-color: aliceblue;
-     width: 100%;
-     height: 100%;
+#produtos {
+    padding: 20px;
+}
+#produtos h2 {
+    margin-bottom: 20px;
+}
+#produtos article {
+    width: 230px;
+       background: white;
+
+    padding: 12px;
+    margin: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    vertical-align: top;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    transition: transform .2s;
+}
+
+#produtos article:hover {
+    transform: scale(1.13);
+}
+#produtos img {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+}
+#produtos button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #004aad;
+
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+#produtos button:hover {
+    background: #008f25;
+}
+
+#cesto {
+    background: #dce6f5;
+    padding: 20px;
+}
+#lista-cesto {
+    list-style: none;
+    padding: 0;
+}
+#lista-cesto li {
+    background: white;
+    margin: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+#lista-cesto img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+#lista-cesto button {
+    padding: 6px 10px;
+    background: #c10000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#lista-cesto button:hover {
+    background: #910000;
 }
