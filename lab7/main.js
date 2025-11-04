@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function loadProducts() {
-  fetch("https://deisishop.pythonanywhere.com/products")
+  fetch('https://deisishop.pythonanywhere.com/products')
     .then(res => res.json())
     .then(data => {
       produtos = data;
@@ -61,7 +61,7 @@ function criarProduto(produto) {
 
 
 function loadCategorias() {
-  fetch("https://deisishop.pythonanywhere.com/categories")
+  fetch('https://deisishop.pythonanywhere.com/categories')
     .then(res => res.json())
     .then(categorias => {
       const select = document.createElement("select");
