@@ -146,3 +146,75 @@ function atualizarCesto() {
   const total = cesto.reduce((soma, p) => soma + p.price, 0);
   totalCesto.innerHTML = `<strong>Total: ${total.toFixed(2)} €</strong>`;
 }
+
+document.getElementById("finalizarCompra").addEventListener("click", abrirCheckout);
+
+function abrirCheckout() {
+  const div = document.getElementById("checkout");
+
+  div.innerHTML = `
+    <h3>Checkout</h3>
+    
+    <label><input type="checkbox" id="estudante"> Sou estudante</label>
+    <br><br>
+
+    <input id="cupao" type="text" placeholder="Cupão de desconto">
+    <br><br>
+
+    <button id="confirmarCompra">Confirmar compra</button>
+
+    <p id="mensagemPagamento"></p>
+  `;
+
+  document.getElementById("confirmarCompra").addEventListener("click", fazerPagamento);
+}
+function fazerPagamento() {
+  const cesto = JSON.parse(localStorage.getItem("produtos-selecionados"));
+
+  if (!cesto.length) {
+    alert("O cesto está vazio!");
+    return;
+  }
+
+  const estudante = document.getElementById("estudante").checked;
+  const cupao = document.getElementById("cupao").value;
+
+  const produtosIDs = cesto.map(p => p.id);
+
+  const data = {
+    products: produtosIDs,
+    student: estudante,
+    coupon: cupao
+  };
+
+  fetch('https://deisishop.pythonanywhere.com/buy', {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  })
+    .then(res => res.json())
+    .then(resposta => {
+      const msg = document.getElementById("mensagemPagamento");
+
+      if (resposta.error) {
+        msg.innerHTML = `<span style='color:red;'>${resposta.error}</span>`;
+        return;
+      }
+
+      msg.innerHTML = `
+        ✅ Compra realizada com sucesso!<br>
+        💳 Referência: <b>${resposta.reference}</b><br>
+        💰 Total final: <b>${resposta.total_to_pay}€</b>
+      `;
+console.log(resposta);
+
+      // limpar carrinho
+      localStorage.setItem("produtos-selecionados", JSON.stringify([]));
+      atualizarCesto();
+    }) 
+    
+    .catch(() => {
+      alert("Erro ao processar pagamento.");
+    });
+}
+
